@@ -7,16 +7,16 @@ class Person {
   def extraInfo //same as Object
 }
 
-def alice = new Operators.Person( name: "Alice", age: 25, extraInfo: "A girl" )
+def alice = new Person( name: "Alice", age: 25, extraInfo: "A girl" )
 
 assert alice.name == "Alice"
 assert "Person(Alice, 25, A girl)" == alice.toString() //uses Canonical
 
-def bob = new Operators.Person( name: "Bob", age: 40, extraInfo: alice )
+def bob = new Person( name: "Bob", age: 40, extraInfo: alice )
 
 //Cast map to bean?!?!
 def map = [name: "Jason", age: 30]
-def jason = map as Operators.Person
+def jason = map as Person
 
 //slicing a collection of beans into a collection of fields
 alice.age -= 10 //now alice is 15
